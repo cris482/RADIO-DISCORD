@@ -1,12 +1,11 @@
 <h1 align="center"> RADIO-DISCORD USING PYTHON </h1>
 
-<h3>Library yang dibutuhkan:</h3>
+<h3>Library:</h3>
 
 <ul>
       <li>PyNaCl</li>
       <li>FFmpeghttps</li>
       <li>python-dotenv</li>
-      <li>discord-voice</li>
 </ul>
 
 
