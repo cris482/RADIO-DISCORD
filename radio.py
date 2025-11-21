@@ -4,11 +4,16 @@ from discord.ext import commands
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="/", intents=intents)
 # --- URL RADIO ----
-RADIO_URL = "https://radio10.pro-fhi.net/flux-qlvuthph/192stream"
-
-
+RADIO_URL ="https://radio10.pro-fhi.net/flux-qlvuthph/192stream"
+            
+""" 
+    - cari link streaming radio
+    - buka inspect, klik network, dan copy paste request URL : http://stream-nodexxxxxxxxxxxx
+    - ganti pada RADIO_URL diatas
+    - tambahkan TOKEN DISCORD anda pada kode baris paling bawah
+"""
 
 @bot.event
 async def on_ready():
@@ -36,7 +41,7 @@ async def radio(ctx):
         before_options="-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5"
     ))
 
-    await ctx.send("🎶 KZFX Z-93.7 FM Ridgecrest CA, Amerika Serikat!")
+    await ctx.send("🎶 ISI BERDASAR NAMA RADIO YAND DIMASUKKAN ")
 
 
 @bot.command()
@@ -49,4 +54,4 @@ async def stop(ctx):
         await ctx.send("Bot tidak ada di voice channel.")
 
 
-bot.run("ISI TOKEN DISINI")
+bot.run("ISI TOKE DISCORD DISINI")
