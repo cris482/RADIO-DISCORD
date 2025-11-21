@@ -14,10 +14,15 @@ RADIO_LIST = {
     
     # Papua
     "jayapura1": "https://stream-node1.rri.co.id/streaming/25/9025/rrijayapurapro1.mp3",
+    "jayapura2": "https://stream-node0.rri.co.id/streaming/23/9023/rrijayapurapro2.mp3",
+    "jayapura3": "https://stream-node0.rri.co.id/streaming/14/9014/kbrn.mp3",
     "manokwari1": "https://stream-node1.rri.co.id/streaming/26/9026/rrimanokwaripro1.mp3",
+    "manokwari2": "https://stream-node1.rri.co.id/streaming/24/9024/rrimanokwaripro2.mp3",
+    "manokwari3": "https://stream-node0.rri.co.id/streaming/14/9014/kbrn.mp3",
     "manokwari4": "https://stream-node1.rri.co.id/streaming/26/9026/rrimanokwaripro4.mp3",
     "sorong1": "https://stream-node1.rri.co.id/streaming/27/9027/rrisorongpro1.mp3",
-    "sorong2": "https://stream-node1.rri.co.id/streaming/27/9027/rrisorongpro2.mp3",
+    "sorong2": "https://stream-node1.rri.co.id/streaming/17/9217/rrisorongpro2.mp3",
+    "sorong3": "https://stream-node0.rri.co.id/streaming/14/9014/kbrn.mp3",
     "merauke1": "https://stream-node1.rri.co.id/streaming/28/9028/rrimeraukepro1.mp3",
     "nabire1": "https://stream-node1.rri.co.id/streaming/29/9029/rrinabirepro1.mp3",
     "wamena1": "https://stream-node1.rri.co.id/streaming/30/9030/rriwamenapro1.mp3",
@@ -65,7 +70,7 @@ async def radio(ctx, station=None):
         ))
         
         # Mendapatkan nama stasiun yang lebih readable
-        station_name = station.replace("1", " Pro 1").replace("2", " Pro 2").replace("4", " Pro 4")
+        station_name = station.replace("1", " Pro 1").replace("2", " Pro 2").replace("3", " Pro 3").replace("4", " Pro 4")
         station_name = station_name.replace("ambon", "RRI Ambon").replace("ternate", "RRI Ternate")
         station_name = station_name.replace("jayapura", "RRI Jayapura").replace("manokwari", "RRI Manokwari")
         station_name = station_name.replace("sorong", "RRI Sorong").replace("merauke", "RRI Merauke")
@@ -96,13 +101,13 @@ async def radiolist(ctx):
     )
     
     embed.add_field(
-        name="🏝️ Maluku",
+        name="RRI Maluku",
         value="\n".join([f"• `{station}`" for station in maluku_stations]),
         inline=True
     )
     
     embed.add_field(
-        name="🦅 Papua",
+        name="RRI Papua",
         value="\n".join([f"• `{station}`" for station in papua_stations]),
         inline=True
     )
@@ -134,4 +139,4 @@ async def radio_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("❌ Silakan pilih stasiun radio!\nContoh: `!radio ambon1`\nKetik `!radiolist` untuk melihat semua stasiun.")
 
-bot.run("ISI TOKEN DISCORD DISINI")
+bot.run("TOKEN DISINI")
